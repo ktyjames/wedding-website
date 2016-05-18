@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "private": true,
   "scripts": {
-    "prebuild": "",
+    "prebuild": "rimraf dist",
     "build": "NODE_ENV=production webpack",
     "dev": "NODE_ENV=development nodemon ./src/server/server.js --ignore ./src/client --ignore ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"

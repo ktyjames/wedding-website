@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import { connect } from 'react-redux'
+import fetch from 'isomorphic-fetch'
 
 import * as indexActions from '../actions/index_actions'
 
@@ -9,8 +10,13 @@ class Index extends React.Component {
     super(props)
   }
   
-  handleButtonPress = () =>{
-    this.props.indexAction()
+  componentDidMount(){
+    this.props.getServerData()
+    
+  }
+  
+  handleButtonPress = () => {
+    this.props.getServerData()
   }
 
   render(){
@@ -34,5 +40,6 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, {
-  indexAction: indexActions.indexAction
+  indexAction: indexActions.indexAction,
+  getServerData: indexActions.getServerData
 })(Index)

@@ -12,6 +12,12 @@ function index( state = initialIndexState, action){
         someProp: 'new text created!'
       })
     
+    case types.TEST_ACTION_SUCCESS:
+      return state
+
+    case types.TEST_ACTION_FAILURE:
+      return state
+    
     default:
       return state
   }

@@ -3,7 +3,9 @@ import 'babel-polyfill'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Root from './containers/root'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
+import routes from './routes/routes'
 import configureStore from './store/configure_store'
 
 //import here for store config when using redux
@@ -14,5 +16,7 @@ const store = configureStore(browserHistory, window.__initialState__)
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
-  <Root history={ history } store={ store }/>, document.getElementById('root')
+  <Provider store={ store } >
+    <Router history={ history } routes={ routes }/>
+  </Provider>, document.getElementById('root')
 )

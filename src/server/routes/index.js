@@ -1,5 +1,3 @@
-'use strict'
-
 const VERSION = process.env.NODE_ENV === 'development' ? 'dev' : String(require('json!../../../package.json').version)
 
 const express = require('express')

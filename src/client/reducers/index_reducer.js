@@ -8,7 +8,9 @@ function index( state = initialIndexState, action){
   switch(action.type){
     
     case types.INDEX_ACTION:
-      return state
+      return Object.assign({}, state, {
+        someProp: 'new text created!'
+      })
     
     default:
       return state

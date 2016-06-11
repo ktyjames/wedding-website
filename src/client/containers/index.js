@@ -9,10 +9,12 @@ class Index extends React.Component {
   }
 
   render(){
-    const { someProp } = this.props
+    let style = {
+      
+    }
+    
     return(
       <div>
-        <p>{ someProp }</p>
       </div>
     )
   }

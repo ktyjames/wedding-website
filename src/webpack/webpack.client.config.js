@@ -107,7 +107,20 @@ module.exports = function(version){
         mangle: false
       })
     )
-    clientConfig.entry.vendor = []
+    clientConfig.entry.vendor = [
+      'babel-polyfill',
+      'jquery',
+      'bootstrap',
+      'radium',
+      'react',
+      'react-dom',
+      'react-redux',
+      'react-router',
+      'react-router-redux',
+      'redux',
+      'redux-thunk',
+      'isomorphic-fetch'
+    ]
     clientConfig.entry.client.push(path.join(PROJECT_ROOT, 'src/client/client.js'))
   }
 

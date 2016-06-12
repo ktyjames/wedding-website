@@ -45,6 +45,7 @@ function renderFullPage(html, initialState) {
       <head>
         <meta http-equiv="X-UA-Compatible" content="IE=11">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" media="all" />
         <title>Great Scott</title>
         <style> html, body, #root { width: 100%; height: 100%} </style>
       </head>

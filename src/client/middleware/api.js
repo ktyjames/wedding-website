@@ -1,6 +1,7 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
+import React from 'react';
 
-const SERVICE_URL = '/api/'
+const SERVICE_URL = '/api/';
 const Headers = {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
@@ -15,21 +16,21 @@ export const Methods = {
 //executes the actual API call
 function callApi(endpoint, method, body){
   const fullUrl = SERVICE_URL + endpoint
-
+  
   return fetch(fullUrl, {
     method: method,
     headers: Headers,
-    body: body ? JSON.stringify(body) : null
+    body: JSON.stringify(body)
   })
-    .then(response =>response.json().then(json => ({json, response})))
-    .then(({json, response}) => {
+  .then(response =>response.json().then(json => ({json, response})))
+  .then(({json, response}) => {
 
-      if(!response.ok){
-        return Promise.reject(json);
-      }
+    if(!response.ok){
+      return Promise.reject(json);
+    }
 
-      return json;
-    })
+    return json;
+  })
 }
 
 // Action key that carries API call info interpreted by this middleware.
@@ -45,7 +46,7 @@ export const api = store => next => action => {
 
   let { endpoint } = callAPI;
 
-  const { types, method, body } = callAPI;
+  const { schema, types, method, body } = callAPI;
 
   if (typeof endpoint === 'function') {
     endpoint = endpoint(store.getState())
@@ -80,20 +81,24 @@ export const api = store => next => action => {
   next(actionWith({ type: requestType }));
 
 
-  return callApi(endpoint, method, body)
+  return callApi(endpoint, method, schema, body)
     .then(
       //create a new action with response data and a type
       response => next(actionWith({
         response,
         endpoint,
-        type: successType
+        type: successType,
+        isLoading: false,
+        isInitialLoad: false
       }))
       ,
       //create a new action with error message and a type
       error => next(actionWith({
         type: failureType,
         endpoint,
-        error: error.message || 'Something bad happened'
+        error: error.message || 'Something bad happened',
+        isLoading: false,
+        isInitialLoad: false
       }))
     )
 };

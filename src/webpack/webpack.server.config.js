@@ -27,7 +27,7 @@ module.exports = function(version){
     name: 'server',
     devtool: 'source-map',
     target: 'node',
-    entry: path.join(PROJECT_ROOT, 'src/server/server.js'),
+    entry: path.join(PROJECT_ROOT, 'src/server/index.js'),
     output: {
       path: path.join(PROJECT_ROOT, 'dist'),
       filename: 'server.js'
@@ -41,6 +41,19 @@ module.exports = function(version){
         'process.env.PKG_VERSION': JSON.stringify(version)
       })
     ],
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader: 'babel',
+          exclude: [/node_modules/, './dist', './src/client'],
+          query:{
+            plugins: [],
+            presets: ['es2015', 'stage-0', 'react']
+          }
+        }
+      ]
+    },
     externals: nodeModules
   }
 

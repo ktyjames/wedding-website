@@ -6,7 +6,7 @@ import { logger, crashReporter } from '../middleware/logging'
 import rootReducer from '../reducers/root_reducer'
 
 function configureStore(history, initialState){
-  return createStore(
+  const store =  createStore(
     rootReducer,
     initialState,
     applyMiddleware(
@@ -17,6 +17,16 @@ function configureStore(history, initialState){
       crashReporter
     )
   )
+
+  if (module.hot) {
+    // Enable Webpack hot module replacement for reducers
+    module.hot.accept('../reducers/root_reducer', () => {
+      const nextRootReducer = require('../reducers/root_reducer').default
+      store.replaceReducer(nextRootReducer)
+    })
+  }
+
+  return store
 }
 
 export default configureStore

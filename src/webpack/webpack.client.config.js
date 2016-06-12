@@ -31,7 +31,7 @@ module.exports = function(version){
           exclude: [/node_modules/, './dist', './src/server'],
           query:{
             plugins: [],
-            presets: ['es2015', 'stage-0', 'react']
+            presets: ['es2015', 'stage-0', 'react', 'react-hmre']
           }
         },
         {
@@ -64,8 +64,8 @@ module.exports = function(version){
           loader: 'url?limit=100000&mimetype=image/svg+xml'
         },
         {
-          test: /\.(ico|jpg)$/,
-          loader: 'url?limit=100000'
+          test: /\.(ico)$/,
+          loader: "static-loader"
         }
       ]
     }

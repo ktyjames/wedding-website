@@ -8,6 +8,9 @@ import { Router } from 'react-router'
 import routes from './routes/routes'
 import configureStore from './store/configure_store'
 
+//copies favicon
+require("static?!./images/favicon.ico?output=./favicon.ico");
+
 //import here for store config when using redux
 import { syncHistoryWithStore } from 'react-router-redux'
 import { browserHistory } from 'react-router'

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import * as indexActions from '../actions/index_actions'
+import TestComponent from '../components/test_component'
 
 class Index extends React.Component {
   constructor(props){
@@ -13,11 +14,11 @@ class Index extends React.Component {
     return(
       <div>
         <p>{ someProp }</p>
+        <TestComponent text="component string"/>
       </div>
     )
   }
 }
-
 
 function mapStateToProps(state){
   return {

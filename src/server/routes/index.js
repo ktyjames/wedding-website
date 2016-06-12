@@ -9,30 +9,41 @@ import { Provider } from 'react-redux'
 
 export default function handleRender(req, res) {
 
-  const memoryHistory = createMemoryHistory(req.path)
-  let store = configureStore(memoryHistory)
-  const history = syncHistoryWithStore(memoryHistory, store)
+
+  // Standard Client side rendering in Dev mode w/ no Hot Module Replacemnt 
+  // -- ** Hot Module replacement has undesired behavior for my workflow **
+  if(process.env.NODE_ENV === 'development'){
+    res.send(renderFullPage('', {}))
+
+    // Server Side rendering in prod --- provides faster rendering
+  } else {
+
+    const memoryHistory = createMemoryHistory(req.path)
+    let store = configureStore(memoryHistory)
+    const history = syncHistoryWithStore(memoryHistory, store)
+
+    match({history, routes, location: req.url}, (error, redirectLocation, renderProps) => {
+      if (error) {
+        res.status(500).send(error.message)
+      } else if (redirectLocation) {
+        res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+      } else if (renderProps) {
+
+        store = configureStore(memoryHistory, store.getState())
+
+        const content = renderToString(
+          <Provider store={ store }>
+            <RouterContext {...renderProps} />
+          </Provider>
+        )
+        res.status(200).send(renderFullPage(content, store.getState()))
+      } else {
+        res.status(404).send('Not found')
+      }
+    })
+  }
 
 
-  match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
-    if (error) {
-      res.status(500).send(error.message)
-    } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-    } else if (renderProps) {
-
-      store = configureStore(memoryHistory, store.getState() )
-
-      const content = renderToString(
-        <Provider store={ store }>
-          <RouterContext {...renderProps} />
-        </Provider>
-      )
-      res.status(200).send(renderFullPage(content, store.getState()))
-    } else {
-      res.status(404).send('Not found')
-    }
-  })
 }
 
 function renderFullPage(html, initialState) {

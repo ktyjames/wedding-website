@@ -16,9 +16,12 @@ if(process.env.NODE_ENV === 'development'){
   const compiler = webpack(webpackConfig)
   app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: webpackConfig.output.publicPath}))
   app.use(webpackHotMiddleware(compiler))
+
+  //colorized requests
+  const morgan = require('morgan')
+  app.use(morgan('dev'))
 }
 
 //Express API Routes
 app.use(express.static('./public'))
-
 app.use(handleRender)

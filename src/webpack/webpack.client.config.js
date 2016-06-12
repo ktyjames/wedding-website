@@ -31,7 +31,7 @@ module.exports = function(version){
           exclude: [/node_modules/, './dist', './src/server'],
           query:{
             plugins: [],
-            presets: ['es2015', 'stage-0', 'react', 'react-hmre']
+            presets: ['es2015', 'stage-0', 'react']
           }
         },
         {
@@ -88,6 +88,9 @@ module.exports = function(version){
       'bootstrap-webpack!' + path.join(PROJECT_ROOT, 'src/webpack/bootstrap.config.js'),
       path.join(PROJECT_ROOT, 'src/client/client.js')
     )
+
+    //hot module replacement preset
+    //clientConfig.module.loaders[0].query.presets.push('react-hmre')
   }
 
   if(process.env.NODE_ENV === 'production'){

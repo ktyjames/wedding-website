@@ -18,13 +18,13 @@ function configureStore(history, initialState){
     )
   )
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('../reducers/root_reducer', () => {
-      const nextRootReducer = require('../reducers/root_reducer').default
-      store.replaceReducer(nextRootReducer)
-    })
-  }
+  // Uncomment for Webpack hot module replacement.
+  // if (module.hot) {
+  //   module.hot.accept('../reducers/root_reducer', () => {
+  //     const nextRootReducer = require('../reducers/root_reducer').default
+  //     store.replaceReducer(nextRootReducer)
+  //   })
+  // }
 
   return store
 }

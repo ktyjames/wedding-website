@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 export default function handleRender(req, res) {
 
 
-  // Standard Client side rendering in Dev mode w/ no Hot Module Replacemnt 
+  // Standard Client side rendering in Dev mode w/ no Hot Module Replacement
   // -- ** Hot Module replacement has undesired behavior for my workflow **
   if(process.env.NODE_ENV === 'development'){
     res.send(renderFullPage('', {}))
@@ -58,7 +58,7 @@ function renderFullPage(html, initialState) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" media="all" />
         <title>Great Scott</title>
-        <style> html, body, #root { width: 100%; height: 100%} </style>
+        <style> html, body, #root { width: 100%; height: 100%; margin: 0} </style>
       </head>
       <body>
         <div id="root">${ html }</div>

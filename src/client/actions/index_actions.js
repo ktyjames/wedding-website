@@ -5,3 +5,16 @@ export function indexAction(){
     type: types.INDEX_ACTION
   }
 }
+
+export function addData(){
+  return {
+    type: types.ADD_DATA
+  }
+}
+
+export function deleteData(index){
+  return {
+    type: types.DELETE_DATA,
+    index
+  }
+}

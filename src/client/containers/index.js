@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-import * as indexActions from '../actions/index_actions'
-import TestComponent from '../components/test_component'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Index extends React.Component {
   constructor(props){
@@ -10,22 +8,51 @@ class Index extends React.Component {
   }
 
   render(){
-    const { someProp } = this.props
-    return(
-      <div>
-        <p>{ someProp }</p>
-        <TestComponent text="component string"/>
-      </div>
+    let style = {
+      base: { 
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 300, 
+        height: 300, 
+        backgroundColor: 'blue',
+        color: 'white',
+        border: '1px solid black'
+      }
+    }
+      return(
+        
+      
+
+    <div className="flipper">
+      {/*<div style={ style.base }>
+       <div>SIDE 1</div>
+       </div>
+       */}
+      <ReactCSSTransitionGroup
+        transitionName="flip"
+        transitionAppear={ true }
+        transitionAppearTimeout={1000}
+        transitionEnterTimeout={1000}
+        transitionLeaveTimeout={1000}
+      >
+        <div style={ style.base }>
+          <div>SIDE 1</div>
+        </div>
+        
+      </ReactCSSTransitionGroup>
+    </div>
+      
     )
   }
 }
 
 function mapStateToProps(state){
   return {
-    someProp: state.index.someProp
+
   }
 }
 
 export default connect(mapStateToProps, {
-  indexAction: indexActions.indexAction
+
 })(Index)

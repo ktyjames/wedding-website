@@ -1,0 +1,23 @@
+.base{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #856C59 1%, transparent 50%), url('../images/home-hero.jpg') no-repeat;
+  background-size: cover;
+}
+
+.gsl-logo{
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 15px;
+}
+
+nav{
+  position: relative;
+
+}
+
+h1{
+  font-family: 'mila-script-pro';
+
+}

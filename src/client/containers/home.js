@@ -9,10 +9,9 @@ class Home extends React.Component {
   }
 
   render(){
-
     return(
-      <div>
-        <img src={ require('../images/home-hero.jpg') } />
+      <div className="base">
+        <img className="gsl-logo" src={require('../images/great-scott-love.png')}/>
       </div>
     )
   }

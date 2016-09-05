@@ -10,7 +10,7 @@ class Contact extends React.Component {
   render(){
     return(
       <div>
-        <Nav/>
+        <Nav location="contact"/>
       </div>
     )
   }

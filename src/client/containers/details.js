@@ -10,7 +10,7 @@ class Details extends React.Component {
   render(){
     return(
       <div>
-        <Nav />
+        <Nav location="details"/>
       </div>
     )
   }

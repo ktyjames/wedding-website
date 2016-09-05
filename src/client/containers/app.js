@@ -12,7 +12,7 @@ class App extends React.Component {
     const { children } = this.props
 
     return(
-      <div style={ style.base }>
+      <div>
         { children }
       </div>
     )

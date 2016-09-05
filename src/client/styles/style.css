@@ -1,10 +1,6 @@
-.base{
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom, #856C59 1%, transparent 60%), url('../images/home-hero.jpg') no-repeat;
-  background-size: cover;
+a {
+  text-decoration: none;
 }
-
 .gsl-logo{
   width: 100%;
   height: auto;

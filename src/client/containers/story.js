@@ -9,7 +9,7 @@ class Story extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="story">
         <Nav location="story"/>
       </div>
     )

@@ -9,8 +9,23 @@ class Home extends React.Component {
   }
 
   render(){
+
+    const style={
+      hero:{
+        width: '100%',
+        height: '100vh',
+        // background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url('images/home-hero.jpg') no-repeat;
+        // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65))), url('images/home-hero.jpg') no-repeat;
+        // background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url('images/home-hero.jpg') no-repeat;
+        // background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url('images/home-hero.jpg') no-repeat;
+        // background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url('images/home-hero.jpg') no-repeat;
+        // background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 59%, rgba(0, 0, 0, 0.65) 100%), url('images/home-hero.jpg') no-repeat;
+      }
+    }
+
     return(
-      <div>
+      <div style={style.hero}>
+        <img src=""
         home
       </div>
     )

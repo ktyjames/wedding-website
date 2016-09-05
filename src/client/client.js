@@ -8,10 +8,10 @@ import { Router } from 'react-router'
 import routes from './routes/routes'
 import configureStore from './store/configure_store'
 
-import './style.css'
-
 //copies favicon
 require("static?!./images/favicon.ico?output=./favicon.ico");
+import './styles/style.css'
+import './styles/icons.css'
 
 //import here for store config when using redux
 import { syncHistoryWithStore } from 'react-router-redux'

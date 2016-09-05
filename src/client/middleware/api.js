@@ -18,8 +18,11 @@ function callApi(endpoint, method, body){
   const fullUrl = SERVICE_URL + endpoint
   
   return fetch(fullUrl, {
+    credentials: 'include',
     method: method,
     headers: Headers,
+    mode: 'cors',
+    cache: 'no-cache',
     body: JSON.stringify(body)
   })
   .then(response =>response.json().then(json => ({json, response})))

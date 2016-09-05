@@ -7,21 +7,18 @@ const PROJECT_ROOT = path.resolve(__dirname, '../../')
 
 module.exports = function(version){
   let clientConfig = {
-    name: `client.${version}`,
+    name: `client.${ version }`,
     devtool: 'cheap-module-eval-source-map',
     entry: {
       client: []
     },
     output:{
       path: path.join(PROJECT_ROOT, 'dist/public'),
-      filename: `client-${version}.js`,
+      filename: `client-${ version }.js`,
       publicPath: ''
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery'
-      })
+      
     ],
     module: {
       loaders: [
@@ -34,11 +31,7 @@ module.exports = function(version){
             presets: ['es2015', 'stage-0', 'react']
           }
         },
-        {
-          test: /bootstrap\/js\//,
-          loader: 'imports?jQuery=jquery',
-          exclude: [/node_modules/, './dist', './src/server']
-        },
+        
         {
           test: /\.css/,
           loader: 'style!css'
@@ -84,12 +77,15 @@ module.exports = function(version){
 
     // webpack hot middleware
     clientConfig.entry.client.push(
+      'eventsource-polyfill',
+      'babel-polyfill',
       'webpack-hot-middleware/client?reload=true',
-      'bootstrap-webpack!' + path.join(PROJECT_ROOT, 'src/webpack/bootstrap.config.js'),
+      
+      
       path.join(PROJECT_ROOT, 'src/client/client.js')
     )
 
-    //hot module replacement preset
+    //hot module replacement preset --- Warning! Doesn't work well with dev client side rendering
     //clientConfig.module.loaders[0].query.presets.push('react-hmre')
   }
 
@@ -101,16 +97,16 @@ module.exports = function(version){
         'process.env.PKG_VERSION': JSON.stringify(version)
       }),
       new webpack.IgnorePlugin(/^\.\/locale$/,/moment$/),
-      new webpack.optimize.CommonsChunkPlugin("vendor", `vendor.bundle-${version}.js`),
+      new webpack.optimize.CommonsChunkPlugin("vendor", `vendor.bundle-${ version }.js`),
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
-        mangle: false
+        mangle: true
       })
     )
     clientConfig.entry.vendor = [
+      
       'babel-polyfill',
-      'jquery',
-      'bootstrap',
+      'lodash',
       'radium',
       'react',
       'react-dom',
@@ -121,7 +117,10 @@ module.exports = function(version){
       'redux-thunk',
       'isomorphic-fetch'
     ]
-    clientConfig.entry.client.push(path.join(PROJECT_ROOT, 'src/client/client.js'))
+    clientConfig.entry.client.push(
+      'babel-polyfill',
+      path.join(PROJECT_ROOT, 'src/client/client.js')
+    )
   }
 
   return clientConfig

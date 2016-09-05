@@ -11,9 +11,9 @@ class App extends React.Component {
     const { routing } = this.props
 
     const homeBackground = `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${require('../images/home-hero.jpg')} )`
-    const storyBackground = ``
-    const detailsBackground = ``
-    const contactBackground = ``
+    const storyBackground = `linear-gradient(to bottom, #E4D0C9 1%, transparent 60%), url( ${require('../images/story-hero.jpg')} )`
+    const detailsBackground = `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${require('../images/details-hero.jpg')} )`
+    const contactBackground = `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${require('../images/contact-hero.jpg')} )`
 
     switch(routing.pathname) {
       case '/':
@@ -76,5 +76,5 @@ function mapStateToProps(state){
 }
 
 export default connect(mapStateToProps, {
-  
+
 })(App)

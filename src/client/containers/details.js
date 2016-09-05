@@ -9,8 +9,8 @@ class Details extends React.Component {
 
   render(){
     return(
-      <div className="details">
-        <Nav />
+      <div>
+        <Nav location="details"/>
       </div>
     )
   }

@@ -11,8 +11,8 @@ class Home extends React.Component {
 
   render(){
     return(
-      <div className="base">
-        <Nav />
+      <div>
+        <Nav location="home"/>
       </div>
     )
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+const image = require('../images/home-hero.jpg')
+
 import * as homeActions from '../actions/home_actions'
 
 class Home extends React.Component {
@@ -9,9 +11,10 @@ class Home extends React.Component {
   }
 
   render(){
+
     return(
       <div>
-        home
+        <img src={ image } />
       </div>
     )
   }

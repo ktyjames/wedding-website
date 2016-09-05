@@ -9,8 +9,10 @@ class Story extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className="story">
         <Nav/>
+        <div className="kraft-callout">
+        </div>
       </div>
     )
   }

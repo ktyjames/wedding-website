@@ -15,7 +15,7 @@
 .details{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #E4D0C9 1%, transparent 60%), url('../images/details-hero.jpg') no-repeat;
+  background: linear-gradient(to bottom, #AAC5B4 1%, transparent 60%), url('../images/details-hero.jpg') no-repeat;
   background-size: cover;
 }
 
@@ -64,5 +64,5 @@ a{
 }
 
 a:active{
-  
+
 }

@@ -12,6 +12,13 @@ class Home extends React.Component {
     return(
       <div className="base">
         <img className="gsl-logo" src={require('../images/great-scott-love.png')}/>
+        <nav>
+          <ul>
+            <li>Story</li>
+            <li>Details</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
       </div>
     )
   }

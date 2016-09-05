@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import Nav from '../components/nav'
 
 import * as homeActions from '../actions/home_actions'
 
@@ -12,7 +12,7 @@ class Home extends React.Component {
   render(){
     return(
       <div>
-
+        <Nav />
       </div>
     )
   }

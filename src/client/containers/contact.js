@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Nav from '../components/nav'
 
 class Contact extends React.Component {
   constructor(props){
@@ -9,7 +10,7 @@ class Contact extends React.Component {
   render(){
     return(
       <div>
-        contact
+        <Nav/>
       </div>
     )
   }

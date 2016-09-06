@@ -149,7 +149,7 @@ a{
 
 input, textarea{
   background-color: #9A7545;
-  opacity: .6;
+  opacity: .7;
   display: block;
   width: 100%;
   box-shadow: none;
@@ -157,7 +157,7 @@ input, textarea{
   margin: 20px 0 0 0;
   font-family: mila-script-sans-regular;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 input{
@@ -214,11 +214,17 @@ button:hover{
   .background{
     height: 50vh;
   }
+  .form-wrapper{
+    padding: 100px;
+  }
 }
 
 @media(max-width:1000px){
   .background.home > div{
     background-position: center !important;
+  }
+  .form-wrapper{
+    padding: 100px 80px;
   }
 }
 
@@ -234,6 +240,10 @@ button:hover{
   nav > ul > li{
     font-size: 14px;
     padding: 15px;
+  }
+
+  .form-wrapper{
+    padding: 100px 50px;
   }
 }
 
@@ -257,5 +267,8 @@ button:hover{
   .logo{
     padding: 50px;
     width: 150px;
+  }
+  .form-wrapper{
+    padding: 50px 5px;
   }
 }

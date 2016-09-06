@@ -43,7 +43,7 @@ class Contact extends React.Component {
             <input placeholder="Email" onChange={ this.handleEmailUpdate } value={ emailInput }/>
             <textarea placeholder="Message" onChange={ this.handleMessageUpdate } value={ messageInput }/>
             <button onClick={ this.handlePostMessage }>
-              Ask a Question or just say hi!
+              Ask us a Question or just say hi!
             </button>
           </div>
         </div>

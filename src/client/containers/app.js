@@ -17,7 +17,7 @@ class App extends React.Component {
     let path = this.props.routing.pathname
 
     return(
-      <div className="background">
+      <div className={ `background ${ path === '/' ? 'home' : ''}`}>
         <div style={{
           display: path !== '/' ? 'none' : null,
           position: 'relative',

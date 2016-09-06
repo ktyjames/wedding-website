@@ -67,7 +67,16 @@
 
 .container{
   padding: 60px;
+  text-align: center;
 }
+
+.logo{
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.gm-style-iw + div {display: none;}
 
 nav{
   position: relative;
@@ -92,7 +101,7 @@ nav > ul > li{
 h1{
   font-family: mila-script-basic;
   color: black;
-  font-size: 80px;
+  font-size: 100px;
   text-align: center;
 }
 
@@ -104,6 +113,13 @@ h2{
   margin: 0 auto;
   line-height: 30px;
   padding: 0 15%;
+}
+
+p{
+  font-family: gotham-light;
+  font-size: 18px;
+  line-height: 28px;
+  color: black;
 }
 
 a{

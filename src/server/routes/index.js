@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 export default function handleRender(req, res) {
 
 
-  // Standard Client side rendering in Dev mode w/ no Hot Module Replacemnt 
+  // Standard Client side rendering in Dev mode w/ no Hot Module Replacemnt
   // -- ** Hot Module replacement has undesired behavior for my workflow **
   if(process.env.NODE_ENV === 'development'){
     res.send(renderFullPage('', {}))
@@ -59,10 +59,10 @@ function renderFullPage(html, initialState) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" media="all" />
         <script src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}" ></script>
-        <title>React Redux Template</title>
-        <style> 
+        <title>Great Scott Love</title>
+        <style>
           html { font-size: 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 200;}
-          html, body, #root { margin: 0; } 
+          html, body, #root { margin: 0; }
           body { background-color: #f4f4f4;}
         </style>
       </head>
@@ -73,7 +73,7 @@ function renderFullPage(html, initialState) {
         </script>
         ${vendorPath}
         <script src="/client-${VERSION}.js"></script>
-   
+
       </body>
     </html>`
 

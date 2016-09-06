@@ -34,6 +34,13 @@ class Details extends React.Component {
         </div>
         <div className="container">
           <h1>ceremony & reception</h1>
+          <div className="container">
+            <h2>Riverwood Manor <br /><br />
+            3450 Highway 49 S <br />
+            Harrisburg, NC 28075</h2>
+            <br /><br /><br /><br />
+            <h2>5pm</h2>
+          </div>
         </div>
         <GoogleMapLoader
           containerElement={
@@ -65,8 +72,9 @@ class Details extends React.Component {
                     <InfoWindow
                       key={`${ `marker_${index}` }_info_window`}>
                       <div>
-                        Riverwood Mannor <br />
-                        1234 Harrisburg
+                        Riverwood Manor <br />
+                        3450 Highway 49 S <br />
+                        Harrisburg, NC 28075
                       </div>
                     </InfoWindow>
 
@@ -77,6 +85,13 @@ class Details extends React.Component {
               })}
             </GoogleMap>
           }/>
+        <div className="container">
+          <h1>registries</h1>
+          <div className="container">
+            <a href="https://www.amazon.com/wedding/katy-james-phil-scott-harrisburg-october-2016/registry/CGGUIKUINVFQ" target="_blank"><img className="logo" src={require('../images/amazon-logo.png')}/></a>
+            <a href="https://www.honeyfund.com/wedding/GreatScottLove" target="_blank"><img className="logo" src={require('../images/honeyfund-logo.png')}/></a>
+          </div>
+        </div>
         <div className="footer">
         </div>
       </div>

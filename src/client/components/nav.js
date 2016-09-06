@@ -8,19 +8,21 @@ class Nav extends React.Component {
   }
   render(){
     const { location } = this.props
+
+    console.log(location)
     return(
       <div>
         <img className="gsl-logo" src={require('../images/great-scott-love.png')}/>
         <nav>
           <ul>
-            <li className={ location === 'story' ? 'active' : null }>
-              <Link to="/story">Story</Link>
+            <li>
+              <Link className={ location === 'story' ? 'active' : null } to="/story">Story</Link>
             </li>
-            <li className={ location === 'details' ? 'active' : null }>
-              <Link to="/details">Details</Link>
+            <li>
+              <Link className={ location === 'details' ? 'active' : null }to="/details">Details</Link>
             </li>
-            <li className={ location === 'contact' ? 'active' : null }>
-              <Link to="/contact">Contact</Link>
+            <li>
+              <Link className={ location === 'contact' ? 'active' : null } to="/contact">Contact</Link>
             </li>
           </ul>
         </nav>

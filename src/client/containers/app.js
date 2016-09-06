@@ -19,50 +19,50 @@ class App extends React.Component {
     return(
       <div className={ `background ${ path === '/' ? 'home' : ''}`}>
         <div style={{
-          //visibility: path !== '/' ? 'hidden' : null,
-          position: 'absolute',
+          display: path !== '/' ? 'none' : null,
+          position: 'relative',
           width: '100%',
           height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ homeHero } ) no-repeat`,
           backgroundSize: 'cover',
-          opacity: path !== '/' ? 0 : 1,
-          transition: 'all 1s ease-in'
+          opacity: 1,
+          transition: 'all 1s ease-in-out'
 
         }}/>
 
         <div style={{
-          //visibility: path !== '/contact' ? 'hidden' : null,
-          position: 'absolute',
+          display: path !== '/contact' ? 'none' : null,
+          position: 'relative',
           width: '100%',
           height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ contactHero } ) no-repeat`,
           backgroundSize: 'cover',
-          opacity: path !== '/contact' ? 0 : 1,
-          transition: 'all 1s ease-in'
+          opacity: 1,
+          transition: 'all .25s ease-in-out'
 
         }}/>
 
         <div style={{
-          //visibility: path !== '/story' ? 'hidden' : null,
-          position: 'absolute',
+          display: path !== '/story' ? 'none' : null,
+          position: 'relative',
           width: '100%',
           height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ storyHero } ) no-repeat`,
           backgroundSize: 'cover',
-          opacity: path !== '/story' ? 0 : 1,
-          transition: 'all 1s ease-in'
+          opacity: 1,
+          transition: 'all .25s ease-in-out'
 
         }}/>
 
         <div style={{
-          //visibility: path !== '/details' ? 'hidden' : null,
-          position: 'absolute',
+          display: path !== '/details' ? 'none' : null,
+          position: 'relative',
           width: '100%',
           height: '100%',
-          background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ detailsHero } ) no-repeat`,
+          background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ detailsHero} ) no-repeat`,
           backgroundSize: 'cover',
-          opacity: path !== '/details' ? 0 : 1,
-          transition: 'all 1s ease-in'
+          opacity: 1,
+          transition: 'all .25s ease-in-out'
 
         }}/>
       </div>

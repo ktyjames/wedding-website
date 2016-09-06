@@ -131,6 +131,12 @@ a{
   color: #000000;
 }
 
+@media(min-width:1421px){
+  .background{
+    height: 90vh;
+  }
+}
+
 @media(max-width:1420px){
   .background{
     height: 50vh;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Nav from '../components/nav'
-import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps"
+import {GoogleMapLoader, GoogleMap, Marker, InfoWindow} from "react-google-maps"
 
 class Details extends React.Component {
   constructor(props){
@@ -59,7 +59,20 @@ class Details extends React.Component {
                   <Marker
                     draggable={ false }
                     {...marker}
-                    onRightclick={() => this.onMarkerRightclick(index) } />
+                    onRightclick={() => this.onMarkerRightclick(index) } >
+
+
+                    <InfoWindow
+                      key={`${ `marker_${index}` }_info_window`}>
+                      <div>
+                        Riverwood Mannor <br />
+                        1234 Harrisburg
+                      </div>
+                    </InfoWindow>
+
+
+
+                  </Marker>
                 );
               })}
             </GoogleMap>

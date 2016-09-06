@@ -6,7 +6,7 @@ const initialDetailsState = {
       lat: 35.329155,
       lng: -80.634645,
     },
-    key: `Taiwan`,
+    key: `Riverwood Manor`,
     defaultAnimation: 2,
   }],
 }

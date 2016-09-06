@@ -9,7 +9,6 @@ class Nav extends React.Component {
   render(){
     const { location } = this.props
 
-    console.log(location)
     return(
       <div>
         <img className="gsl-logo" src={require('../images/great-scott-love.png')}/>

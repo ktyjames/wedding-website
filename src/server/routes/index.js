@@ -15,7 +15,8 @@ export default function handleRender(req, res) {
   if(process.env.NODE_ENV === 'development'){
     res.send(renderFullPage('', {}))
 
-    // Server Side rendering in prod --- provides faster rendering
+  //Server Side rendering in prod --- provides faster rendering
+
   } else {
 
     const memoryHistory = createMemoryHistory(req.path)

@@ -1,7 +1,8 @@
 import bodyParser from 'body-parser'
 import express from 'express'
+import path from 'path'
 import handleRender from './routes/index'
-const port = 8080
+const port = process.env.PORT || 8080
 
 let app = express()
 
@@ -29,7 +30,7 @@ app.use((req, res, next)=>{
 
 //Express API Routes
 app.use('/api', require('./routes/contact'))
-app.use(express.static('./public'))
+app.use(express.static( path.join(__dirname, '/public') ))
 app.use(handleRender)
 
 let server = app.listen(port, ()=> console.log(`Server is listening on port: ${server.address().port}...`))

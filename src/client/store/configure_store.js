@@ -2,8 +2,9 @@ import thunk from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import { api } from '../middleware/api'
-import { logger, crashReporter } from '../middleware/logging'
+import { crashReporter } from '../middleware/logging'
 import rootReducer from '../reducers/root_reducer'
+
 
 function configureStore(history, initialState){
   const store =  createStore(
@@ -13,7 +14,6 @@ function configureStore(history, initialState){
       thunk,
       routerMiddleware(history),
       api,
-      logger,
       crashReporter
     )
   )

@@ -27,6 +27,10 @@ module.exports = function(version){
     name: 'server',
     devtool: 'source-map',
     target: 'node',
+    node: {
+      __dirname: false,
+      __filename: false
+    },
     entry: path.join(PROJECT_ROOT, 'src/server/index.js'),
     output: {
       path: path.join(PROJECT_ROOT, 'dist'),
@@ -51,7 +55,14 @@ module.exports = function(version){
             plugins: [],
             presets: ['es2015', 'stage-0', 'react']
           }
-        }
+        },
+        {
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          ]
+        },
       ]
     },
     externals: nodeModules

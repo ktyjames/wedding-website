@@ -49,7 +49,7 @@ export const api = store => next => action => {
 
   let { endpoint } = callAPI;
 
-  const { schema, types, method, body } = callAPI;
+  const { types, method, body } = callAPI;
 
   if (typeof endpoint === 'function') {
     endpoint = endpoint(store.getState())
@@ -84,7 +84,7 @@ export const api = store => next => action => {
   next(actionWith({ type: requestType }));
 
 
-  return callApi(endpoint, method, schema, body)
+  return callApi(endpoint, method, body)
     .then(
       //create a new action with response data and a type
       response => next(actionWith({

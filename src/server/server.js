@@ -28,6 +28,7 @@ app.use((req, res, next)=>{
 })
 
 //Express API Routes
+app.use('/api', require('./routes/contact'))
 app.use(express.static('./public'))
 app.use(handleRender)
 

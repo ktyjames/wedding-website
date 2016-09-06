@@ -33,6 +33,7 @@ class Details extends React.Component {
           </div>
         </div>
         <div className="container">
+          <h1>ceremony & reception</h1>
         </div>
         <GoogleMapLoader
           containerElement={

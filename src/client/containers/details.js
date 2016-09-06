@@ -32,35 +32,39 @@ class Details extends React.Component {
             </div>
           </div>
         </div>
-          <GoogleMapLoader
-            containerElement={
-              <div style={{
-                  height: 200,
-                  width: '100%' }}/> }
-            googleMapElement={
-              <GoogleMap
-                defaultOptions={{
-                  draggable: false,
-                  zoomControl: false,
-                  scrollwheel: false,
-                  disableDoubleClickZoom: true
-                }}
-                defaultZoom={ 15 }
-                defaultCenter={{
-                  lat: 35.329155,
-                  lng: -80.634645,
-                }}
-                onClick={ this.onMapClick }>
-                {markers.map((marker, index) => {
-                  return (
-                    <Marker
-                      draggable={ false }
-                      {...marker}
-                      onRightclick={() => this.onMarkerRightclick(index) } />
-                  );
-                })}
-              </GoogleMap>
-            }/>
+        <div className="container">
+        </div>
+        <GoogleMapLoader
+          containerElement={
+            <div style={{
+                height: 500,
+                width: '100%' }}/> }
+          googleMapElement={
+            <GoogleMap
+              defaultOptions={{
+                draggable: false,
+                zoomControl: false,
+                scrollwheel: false,
+                disableDoubleClickZoom: true
+              }}
+              defaultZoom={ 15 }
+              defaultCenter={{
+                lat: 35.329155,
+                lng: -80.634645,
+              }}
+              onClick={ this.onMapClick }>
+              {markers.map((marker, index) => {
+                return (
+                  <Marker
+                    draggable={ false }
+                    {...marker}
+                    onRightclick={() => this.onMarkerRightclick(index) } />
+                );
+              })}
+            </GoogleMap>
+          }/>
+        <div className="footer">
+        </div>
       </div>
     )
   }

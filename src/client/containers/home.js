@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Nav from '../components/nav'
 
 class Home extends React.Component {
   constructor(props){
@@ -9,8 +8,7 @@ class Home extends React.Component {
 
   render(){
     return(
-      <div className="base">
-        <Nav location="home"/>
+      <div>
       </div>
     )
   }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Nav from '../components/nav'
 import {GoogleMapLoader, GoogleMap, Marker, InfoWindow} from "react-google-maps"
 
 class Details extends React.Component {
@@ -22,9 +21,6 @@ class Details extends React.Component {
 
     return(
       <div>
-        <div className="details">
-          <Nav location="details"/>
-        </div>
         <div className="kraft-section">
           <div className="vertical-align-wrap">
             <div className="vertical-align vertical-align--middle">

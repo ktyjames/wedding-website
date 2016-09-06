@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Nav from '../components/nav'
 
 import { postMessage, updateEmailInput, updateMessageInput, updateNameInput } from '../actions/contact_actions'
 
@@ -36,8 +35,7 @@ class Contact extends React.Component {
     const { nameInput, messageInput, emailInput, postResponse } = this.props
 
     return(
-      <div className="contact">
-        <Nav location="contact"/>
+      <div>
         { postResponse ? postResponse : null }
         <input placeholder="Name" onChange={ this.handleNameUpdate } value={ nameInput }/>
         <input placeholder="Email" onChange={ this.handleEmailUpdate } value={ emailInput }/>

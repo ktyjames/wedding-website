@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Nav from '../components/nav'
 
 class Story extends React.Component {
   constructor(props){
@@ -10,8 +9,7 @@ class Story extends React.Component {
   render(){
     return(
       <div>
-        <div className="story">
-          <Nav location="story"/>
+        <div>
         </div>
         <div className="kraft-section">
           <div className="vertical-align-wrap">

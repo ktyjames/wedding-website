@@ -21,6 +21,17 @@ class Details extends React.Component {
     const { markers } = this.props
 
     return(
+<<<<<<< HEAD
+      <div>
+        <div className="details">
+          <Nav location="details"/>
+        </div>
+        <div className="kraft-section">
+          <div className="callout">
+            <h2>we are so honored that you are able to join us on our special day!</h2>
+          </div>
+        </div>
+=======
       <div className="details">
         <Nav location="details"/>
 
@@ -57,15 +68,7 @@ class Details extends React.Component {
 
 
 
-      <div>
-        <div className="details">
-          <Nav location="details"/>
-        </div>
-        <div className="kraft-section">
-          <div className="callout">
-            <h2>we are so honored that you are able to join us on our special day!</h2>
-          </div>
-        </div>
+>>>>>>> cfd3706588dce5de460c17b517042a17cf29a255
       </div>
     )
   }

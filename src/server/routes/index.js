@@ -50,6 +50,7 @@ function renderFullPage(html, initialState) {
   const VERSION = process.env.NODE_ENV === 'development' ? 'dev' : String(require('json!../../../package.json').version)
   const vendorPath = process.env.NODE_ENV === 'development' ? '': `<script src="/vendor.bundle-${VERSION}.js"></script>`
 
+  const GOOGLE_MAPS_API_KEY = 'AIzaSyAD9UcjQrhzE_ZV5lPLoSDEqOCWgDItZXs'
   return `
     <!DOCTYPE html>
     <html>
@@ -57,6 +58,7 @@ function renderFullPage(html, initialState) {
         <meta http-equiv="X-UA-Compatible" content="IE=11">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" media="all" />
+        <script src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}" ></script>
         <title>React Redux Template</title>
         <style> 
           html { font-size: 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 200;}
@@ -71,6 +73,7 @@ function renderFullPage(html, initialState) {
         </script>
         ${vendorPath}
         <script src="/client-${VERSION}.js"></script>
+   
       </body>
     </html>`
 

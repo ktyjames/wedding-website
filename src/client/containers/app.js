@@ -17,16 +17,12 @@ class App extends React.Component {
     let path = this.props.routing.pathname
 
     return(
-      <div className="background" style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%'
-      }}>
+      <div className="background">
         <div style={{
           display: path !== '/' ? 'none' : null,
+          position: 'relative',
           width: '100%',
-          height: '100vh',
+          height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ homeHero } ) no-repeat`,
           backgroundSize: 'cover',
 
@@ -34,8 +30,9 @@ class App extends React.Component {
 
         <div style={{
           display: path !== '/contact' ? 'none' : null,
+          position: 'relative',
           width: '100%',
-          height: '100vh',
+          height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ contactHero } ) no-repeat`,
           backgroundSize: 'cover',
 
@@ -43,8 +40,9 @@ class App extends React.Component {
 
         <div style={{
           display: path !== '/story' ? 'none' : null,
+          position: 'relative',
           width: '100%',
-          height: '100vh',
+          height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ storyHero } ) no-repeat`,
           backgroundSize: 'cover',
 
@@ -52,8 +50,9 @@ class App extends React.Component {
 
         <div style={{
           display: path !== '/details' ? 'none' : null,
+          position: 'relative',
           width: '100%',
-          height: '100vh',
+          height: '100%',
           background: `linear-gradient(to bottom, #856C59 1%, transparent 60%), url( ${ detailsHero} ) no-repeat`,
           backgroundSize: 'cover',
 
@@ -69,8 +68,9 @@ class App extends React.Component {
 
     return(
       <div>
-        { this.renderBackgroundDiv() }
         <Nav location={ routing.pathname }/>
+        { this.renderBackgroundDiv() }
+
         { children }
       </div>
     )

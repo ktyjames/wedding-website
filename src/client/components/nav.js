@@ -10,7 +10,7 @@ class Nav extends React.Component {
     const { location } = this.props
 
     return(
-      <div style={{ zIndex: 9999 }}>
+      <div style={{ position: 'absolute', zIndex: 9999 }}>
         <img className="gsl-logo" style={{ cursor: 'pointer' }} src={require('../images/great-scott-love.png')} onClick={ ()=> browserHistory.push('/')}/>
         <nav>
           <ul>

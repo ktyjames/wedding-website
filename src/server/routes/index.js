@@ -1,10 +1,9 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 
-import configureStore from '../../client/store/configure_store'
+
 import { syncHistoryWithStore } from 'react-router-redux'
 import { createMemoryHistory, match, RouterContext } from 'react-router'
-import routes from '../../client/routes/routes'
 import { Provider } from 'react-redux'
 
 export default function handleRender(req, res) {
@@ -18,6 +17,9 @@ export default function handleRender(req, res) {
   //Server Side rendering in prod --- provides faster rendering
 
   } else {
+
+    const configureStore = require('../../client/store/configure_store')
+    const routes = require('../../client/routes/routes')
 
     const memoryHistory = createMemoryHistory(req.path)
     let store = configureStore(memoryHistory)
@@ -52,6 +54,8 @@ function renderFullPage(html, initialState) {
   const vendorPath = process.env.NODE_ENV === 'development' ? '': `<script src="/vendor.bundle-${VERSION}.js"></script>`
 
   const GOOGLE_MAPS_API_KEY = 'AIzaSyAD9UcjQrhzE_ZV5lPLoSDEqOCWgDItZXs'
+  const googlePath = `<script src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}" ></script>`
+
   return `
     <!DOCTYPE html>
     <html>
@@ -59,7 +63,7 @@ function renderFullPage(html, initialState) {
         <meta http-equiv="X-UA-Compatible" content="IE=11">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" media="all" />
-        <script src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}" ></script>
+        ${ googlePath }
         <title>Great Scott Love</title>
         <style>
           html { font-size: 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 200;}

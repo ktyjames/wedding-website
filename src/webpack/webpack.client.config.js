@@ -88,8 +88,6 @@ module.exports = function(version){
       'eventsource-polyfill',
       'babel-polyfill',
       'webpack-hot-middleware/client?reload=true',
-      
-      
       path.join(PROJECT_ROOT, 'src/client/client.js')
     )
 

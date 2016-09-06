@@ -38,6 +38,7 @@ class Details extends React.Component {
             <h2>5pm</h2>
           </div>
         </div>
+
         <GoogleMapLoader
           containerElement={
             <div style={{
@@ -64,7 +65,6 @@ class Details extends React.Component {
                     {...marker}
                     onRightclick={() => this.onMarkerRightclick(index) } >
 
-
                     <InfoWindow
                       key={`${ `marker_${index}` }_info_window`}>
                       <div>
@@ -74,13 +74,12 @@ class Details extends React.Component {
                       </div>
                     </InfoWindow>
 
-
-
                   </Marker>
                 );
               })}
             </GoogleMap>
           }/>
+
         <div className="container">
           <h1>registries</h1>
           <div className="container">

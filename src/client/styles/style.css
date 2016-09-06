@@ -8,21 +8,21 @@
 .story{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #E4D0C9 1%, transparent 60%), url('../images/story-hero.jpg') no-repeat;
+  background: linear-gradient(to bottom, #CFC7CA 1%, transparent 60%), url('../images/story-hero.jpg') no-repeat;
   background-size: cover;
 }
 
 .details{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #AAC5B4 1%, transparent 60%), url('../images/details-hero.jpg') no-repeat;
+  background: linear-gradient(to bottom, #CFC7CA 1%, transparent 60%), url('../images/details-hero.jpg') no-repeat;
   background-size: cover;
 }
 
 .contact{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #7F7F7F 1%, transparent 60%), url('../images/contact-hero.jpg') no-repeat;
+  background: linear-gradient(to bottom, #CFC7CA 1%, transparent 60%), url('../images/contact-hero.jpg') no-repeat;
   background-size: cover;
 }
 
@@ -63,6 +63,7 @@ a{
   text-decoration: none;
 }
 
-a:active{
-
+.active{
+  color: #F6DBDB !important;
+  text-decoration: underline;
 }

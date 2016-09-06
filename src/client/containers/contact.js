@@ -36,13 +36,17 @@ class Contact extends React.Component {
 
     return(
       <div>
-        { postResponse ? postResponse : null }
-        <input placeholder="Name" onChange={ this.handleNameUpdate } value={ nameInput }/>
-        <input placeholder="Email" onChange={ this.handleEmailUpdate } value={ emailInput }/>
-        <input placeholder="Message" onChange={ this.handleMessageUpdate } value={ messageInput }/>
-        <button onClick={ this.handlePostMessage }>
-          Submit
-        </button>
+        <div className="contact-footer">
+          <div className="form-wrapper">
+            { postResponse ? postResponse : null }
+            <input placeholder="Name" onChange={ this.handleNameUpdate } value={ nameInput }/>
+            <input placeholder="Email" onChange={ this.handleEmailUpdate } value={ emailInput }/>
+            <textarea placeholder="Message" onChange={ this.handleMessageUpdate } value={ messageInput }/>
+            <button onClick={ this.handlePostMessage }>
+              Ask a Question or just say hi!
+            </button>
+          </div>
+        </div>
       </div>
     )
   }

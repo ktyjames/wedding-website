@@ -204,6 +204,18 @@ button:hover{
   background-color: #EACDB1;
 }
 
+.header{
+  padding: 100px 100px 0 100px;
+  width: 60%;
+  text-align: center;
+}
+
+.header-two{
+  padding: 100px 100px 0 100px;
+  width: 25%;
+  text-align: center;
+}
+
 @media(min-width:1421px){
   .background{
     height: 90vh;
@@ -217,6 +229,15 @@ button:hover{
   .form-wrapper{
     padding: 100px;
   }
+  .header-two{
+    width: 35%;
+  }
+}
+
+@media(max-width: 1051px){
+  .logo{
+    width: 200px;
+  }
 }
 
 @media(max-width:1000px){
@@ -225,6 +246,10 @@ button:hover{
   }
   .form-wrapper{
     padding: 100px 80px;
+  }
+  .header{
+    padding: 100px 0 0 0;
+    width: 80%;
   }
 }
 
@@ -245,6 +270,10 @@ button:hover{
   .form-wrapper{
     padding: 100px 50px;
   }
+}
+
+@media(max-width: 839px){
+  
 }
 
 @media(max-width:600px){
@@ -270,5 +299,8 @@ button:hover{
   }
   .form-wrapper{
     padding: 50px 5px;
+  }
+  .header{
+    width: 95%;
   }
 }

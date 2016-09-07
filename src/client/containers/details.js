@@ -29,7 +29,7 @@ class Details extends React.Component {
           </div>
         </div>
         <div className="container">
-          <h1>ceremony & reception</h1>
+          <img className="header" src={require('../images/ceremony-reception.png')}/>
           <div className="container">
             <h2>Riverwood Manor <br /><br />
             3450 Highway 49 S <br />
@@ -81,7 +81,7 @@ class Details extends React.Component {
           }/>
 
         <div className="container">
-          <h1>registries</h1>
+          <img className="header-two" src={require('../images/registries.png')}/>
           <div className="container">
             <a href="https://www.amazon.com/wedding/katy-james-phil-scott-harrisburg-october-2016/registry/CGGUIKUINVFQ" target="_blank"><img className="logo" src={require('../images/amazon-logo.png')}/></a>
             <a href="https://www.honeyfund.com/wedding/GreatScottLove" target="_blank"><img className="logo" src={require('../images/honeyfund-logo.png')}/></a>

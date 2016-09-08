@@ -4,26 +4,6 @@
 }
 
 @font-face {
-  font-family: mila-script-basic;
-  src: url('../vendor/fonts/Mila Script Basic.ttf');
-}
-
-@font-face {
-  font-family: mila-script-pro;
-  src: url('../vendor/fonts/Mila Script Pro.ttf');
-}
-
-@font-face {
-  font-family: mila-script-sans-bold;
-  src: url('../vendor/fonts/Mila Script Sans Bold.ttf');
-}
-
-@font-face {
-  font-family: mila-script-sans-light;
-  src: url('../vendor/fonts/Mila Script Sans Light.ttf');
-}
-
-@font-face {
   font-family: mila-script-sans-regular;
   src: url('../vendor/fonts/Mila Script Sans Regular.ttf');
 }

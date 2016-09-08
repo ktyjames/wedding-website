@@ -1,6 +1,7 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
-
+import configureStore from '../../client/store/configure_store'
+import routes from '../../client/routes/routes'
 
 import { syncHistoryWithStore } from 'react-router-redux'
 import { createMemoryHistory, match, RouterContext } from 'react-router'
@@ -17,9 +18,6 @@ export default function handleRender(req, res) {
   //Server Side rendering in prod --- provides faster rendering
 
   } else {
-
-    const configureStore = require('../../client/store/configure_store')
-    const routes = require('../../client/routes/routes')
 
     const memoryHistory = createMemoryHistory(req.path)
     let store = configureStore(memoryHistory)

@@ -17,12 +17,9 @@ exports.postMessage = (req, res) =>{
 
   transporter.sendMail(mailOptions, (err, info)=>{
     if(err){
-      console.log(err)
       return res.status(500).json(err)
     }
 
-
-    console.log('Message sent: ' + info.response);
     res.json(info.response)
   });
 }

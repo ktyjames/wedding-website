@@ -53,8 +53,8 @@ function renderFullPage(html, initialState) {
   const VERSION = process.env.NODE_ENV === 'development' ? 'dev' : String(require('json!../../../package.json').version)
   const vendorPath = process.env.NODE_ENV === 'development' ? '': `<script src="/vendor.bundle-${VERSION}.js"></script>`
 
-  const GOOGLE_MAPS_API_KEY = 'AIzaSyAD9UcjQrhzE_ZV5lPLoSDEqOCWgDItZXs'
-  const googlePath = `<script src="https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}" ></script>`
+
+  const googlePath = `<script src="https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}" ></script>`
 
   return `
     <!DOCTYPE html>

@@ -216,6 +216,24 @@ button:hover{
   text-align: center;
 }
 
+.picture-left{
+  width: 40%;
+  float:left;
+}
+
+.picture-left > img{
+  width: 100%;
+}
+
+.text-right{
+  width: 50%;
+  float: right;
+}
+
+.text-right > p{
+  text-align: left;
+}
+
 @media(min-width:1421px){
   .background{
     height: 90vh;
@@ -273,7 +291,7 @@ button:hover{
 }
 
 @media(max-width: 839px){
-  
+
 }
 
 @media(max-width:600px){
@@ -302,5 +320,13 @@ button:hover{
   }
   .header{
     width: 95%;
+  }
+  .picture-left{
+    display: none;
+  }
+  .text-right{
+    width: auto;
+    float: none;
+    padding: 0 25px;
   }
 }

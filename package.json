@@ -4,6 +4,11 @@
   "description": "",
   "main": "webpack.config.js",
   "private": true,
+  "engines": {
+    "node": "6.3.1",
+    "npm": "3.10.3"
+  },
+
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production webpack",

@@ -106,7 +106,7 @@ module.exports = function(version){
       new webpack.optimize.CommonsChunkPlugin("vendor", `vendor.bundle-${ version }.js`),
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
-        mangle: true
+        mangle: false
       })
     )
     clientConfig.entry.vendor = [
